@@ -317,20 +317,21 @@ def generate_report(client: Client):
         client (Client): Instância da classe Client para gerar o relatório.
     """
     print(f'''
-    Name: {client.name}
+    Nome: {client.name}
 
-    Net worth: {client.get_net_worth()}
+    Patrimônio líquido: {client.get_net_worth()}
     ''')
-    print("Accounts:")
+    print("Contas:")
     for account in client.accounts:
         print(f'''
-            Account name: {account.name}
-            Account balance: {account.balance}
+            Nome da conta: {account.name}
+            Valor da conta: {account.balance}
         ''')
+    print("Investimentos:")
     for investment in client.investments:
         print(f'''
-            Investment type: {investment.type}
-            Current investment value: {investment.calculate_value()}
+            Tipo de investimento: {investment.type}
+            Valor atual do investimento: {investment.calculate_value()}
         ''')
 
 def future_value(client: Client, date: Union[str, datetime]) -> float:
